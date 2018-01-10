@@ -1,0 +1,20 @@
+/* Customisable styles */
+
+#account ul.anonymous li, #account ul.member li, #searchbar input#searchsubmit, input#commentsubmit {
+ background: #ce2626;
+}
+
+#account ul.anonymous li:hover, #account ul.member li:hover, #searchbar input#searchsubmit:hover, input#commentsubmit:hover {
+ background: #961b1b;
+}
+
+#col2 p.title {
+ background: #ce2626;
+}
+
+#col1 a,
+#col2 a,
+#col3 a {
+ color: #961b1b;
+}
+

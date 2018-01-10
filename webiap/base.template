@@ -1,0 +1,22 @@
+class Test(Base):
+    """Create a comparison with other sources"""
+
+    def __init__(self, **args):
+        # country, season, source, casedef_id
+#         if args["season"] == "all":
+#             All(**args)
+#             return
+
+        Base.__init__(self, args)
+
+        self.figname = 
+        self.inistring = 
+
+    def set_params(self):
+        Base.set_params(self)
+
+    def test(self, myini):
+        if not Base.test(self, myini):
+            return False
+        if ...:
+            return False

@@ -1,0 +1,50 @@
+<h2 id='plots'>Plots</h2>
+
+<p>
+For plotting the (ILI) activity, the weekly activity (Monday-Sunday) is
+plotted on Sundays. The determined weekly activity can either be
+joined by straight lines (<i>daily=False</i>), or the
+weekly activity can be determined for each day, where for example on
+Fridays the weekly activity for the period Saturday-Friday is plotted
+(<i>daily=True</i>)
+</p>
+
+<p>
+For graphs which compare various subgroups, these subgroups can be so 
+small, which leads to very noisy incidences.
+Therefore, the incidences in those graphs are a moving average over 
+three weeks.
+</p>
+
+<p>
+When comparing the ILI activity determined by Influenzanet with the
+ILI activity determined by the medical doctors reporting to the
+ECDC, the absolute values could differ significantly.
+These differences could be attributed to the different case definitions
+used by medical doctors in different countries, as well as the different
+rate at which people with ILI symptoms visit their doctor. Also, there
+could be a selection bias in the people who decide to participate in 
+Influenzanet, as well as a selection bias in people who decide to visit
+a GP. The trends in ILI activity as measured by both systems are however
+similar, which can be illustrated by plotting ILI activity from both
+system in the same diagram on different scales. To determine the scaling
+between the axes of both system, a linear regression between the ILI
+activity of both systems is done, and the "gradient" and "intercept"
+are defined, such that:
+</p>
+
+<p class='math'>
+    ILI (Influenzanet) = "gradient" * ILI (EISN) + "intercept"
+</p>
+
+<p>
+The coefficients are based on the data for all previous seasons combined
+(<i>linreg_seasons = "2003,...,2010"</i>). 
+We fix the intercept at 0 (<i>plot.linreg_intercept0 = True</i>), such
+that Influenzanet=0 always corresponds to EISN=0. 
+Leaving the intercept free, in general shows that
+Influenzanet has a relatively higher baseline than EISN. However,
+plots where the origins of the Influenzanet and EISN axes are not
+aligned, such that an ILI activity of zero in Influenzanet corresponds to a
+negative ILI incidence in EISN, leads to confusing graphs.
+</p>

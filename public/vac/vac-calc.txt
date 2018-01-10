@@ -1,0 +1,16 @@
+Vaccine effectiveness: relative reduction in risk
+ve = (not-vac)/not
+   = 1 - vac/not
+    * vac=not => ve=0%
+    * vac=0   => ve=100%
+
+ve* = ((not-bas) - (vac-bas)) / (not-bas)
+    = (not-vac)/(not-bas)
+    = (not-vac)/not * not/(not-bas)
+    = ve * not/(not-bas)
+
+    * vac=bas => ve*=100%
+    * vac=not => ve*=0%
+
+    (ILI_not - baseline) - (ILI_vac - baseline) / (ILI_not - baseline)
+    = VE * ILI_not/(ILI_not - baseline)

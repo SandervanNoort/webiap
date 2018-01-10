@@ -1,0 +1,26 @@
+<h2 id="age_correction">Age correction</h2>
+
+<p>
+It is possible to do age correction on the determined (ILI) activity.
+The corrected (ILI) activity in the population is determined by:
+</p>
+
+<p class='math'>
+(ILI) activity = 
+    Sum( fraction(age_group) * activity(age_group) )
+</p>
+
+<p>
+where the fraction each age group represents in the population is
+take from Eurostat. The default age distribution is: 1-14, 15-64, and 65-100 
+(<i>age_correction = 1-15-65-100</i>).
+</p>
+
+<p>
+Age correction is util to compensate for underrepresented groups.
+However, in Influenzanet the underrepresented groups could be so small,
+that within such a group there is no clear (ILI) signal.
+By doing age correction, these underrepresented noisy signals get 
+amplified, leading to a more noisy signal in the age corrected ILI activity.
+Therefore, by default no age correction is applied.
+</p>

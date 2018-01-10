@@ -1,0 +1,52 @@
+ILI:
+    nl_2010_[prev]_ili
+    nl_2010_google_ili
+    nl_2010_gprate_ili
+    
+    nl_all_month_ili
+    nl_all_google_ili
+    nl_all_gprate_ili
+
+PART:
+    nl_2010_participants
+
+    nl_all_surveys
+
+SYMPTOMS:
+    nl_2010_[prev]_muscle
+    nl_2010_[prev]_eye
+
+    nl_all_year_muscle
+    nl_all_year_eye
+
+SUB:
+    nl_2010_gender_ili
+
+    nl_all_gender_ili
+
+casedefs.make("nl", "2010", "ili")
+    nl_2010_prev_ili
+casedefs.make_allyear("nl", "ili")
+    nl_all_year_ili
+casedefs.make_allmonth("nl", "ili")
+    nl_all_month_ili
+
+sources.make("nl", "2010", "google", "ili")
+    nl_2010_google_ili
+sources.make_all("nl", "google", "ili")
+    nl_all_google_ili
+
+subgroups.make("nl", "2010", "gender", "ili")
+    nl_2010_gender_ili
+subgroups.make_all("nl", "gender", "ili")
+    nl_all_gender_ili
+
+participants.make("nl", "2010", "participants")
+    nl_2010_participation.png
+participants.make_all("nl", "surveys")
+    nl_all_surveys.png
+
+control.make("nl", "2010", "gp", "ili")
+    nl_2010_gp_ili
+control.make_all("nl", "gp", "ili")
+    nl_all_gp_ili

@@ -1,0 +1,35 @@
+Influenzanet ILI data
+When using these data please attribute it as follows:
+Data Source: Influenzanet (http://www.influenzanet.eu)
+
+The number of active participant-weeks are the number of participants
+who were active for the whole week, where participants who were only
+active during a part of the week are counted as a fraction. A participant
+is only included if it has completed at least 3 symptoms' questionnaires,
+and is active between the day of its first completed symptoms' survey
+until the last completed symptoms' survey. Any symptoms a participant had
+when registering are ignored.
+
+Based on the reported symptoms, the number of ILI onsets for each week
+(Monday-Sunday) is determined based on four different ILI case definitions:
+
+ILI-hist: Historic definition (works in every season)
+ - Measured temperature of at least 38 degrees Celsius
+ - Sudden onset of symptoms or fever
+ - At least 1 of: Headache; Muscle pain
+ - At least 1 of: Cough; Sore throat
+
+ILI-ecdc: ECDC recommendation
+ - Sudden onset of symptoms or fever
+ - At least 1 of: Fever or feverishness (chills); Malaise; Headache; Muscle pain
+ - At least 1 of: Cough; Sore throat; Shortness of breath
+
+ILI-fever: Based on ECDC definition with required fever
+ - Sudden onset of symptoms
+ - Fever or feverishness (chills)
+ - At least 1 of: Malaise; Headache; muscle pain
+ - At least 1 of: Cough; Sore throat; Shortness of breath
+
+ILI-cdc: CDC definition
+ - Fever
+ - At least 1 of: Cough; Sore throat

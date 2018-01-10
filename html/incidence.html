@@ -1,0 +1,32 @@
+<h2 id="activity">ILI activity</h2>
+
+<p>
+The (ILI) activity for a certain week (Monday-Sunday) is defined
+as the number of onsets divided by the number of participant-weeks.
+</p>
+<p class='math'>
+    Activity = Onsets / Person-weeks
+</p>
+<p>
+A participant who has been active during the full week is counted
+as 1 person-week. A participant who
+either registered during the week, or who completed his/her last
+symptoms' questionnaire during the week, is counted as a fraction.
+</p>
+<p>
+For determining the day of onset, we use the fever onset data if 
+provided, else the symptoms onset date if provided, and finally 
+the reporting data if neither the symptoms nor the fever onset date is 
+provided (<i>onset = "fever"</i>).
+</p>
+
+<p>
+Onsets which occurred before a person registered in Influenzanet and
+which are reported in the first survey, are ignored 
+(<i>ignore_first = True</i>).
+For a participant who fits the case definition during two consecutive
+surveys, only the first onset is considered (<i>ignore_doube = True</i>).
+Note that if both the first survey and consecutive surveys are excluded,
+the onset of a participant who fits the case definition in both his/her first 
+and second survey, is also excluded.
+</p>

@@ -1,0 +1,13 @@
+*.pyc
+/config/users.csv
+/config/htpasswd.txt
+/public/results
+/public/iap-results
+/config/local.ini
+/data/lang
+/python/log
+/data/survey.ini
+/data/intake.ini
+
+/public/data
+/public/maps

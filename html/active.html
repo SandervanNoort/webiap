@@ -1,0 +1,30 @@
+<h2 id="active">Active participants</h2>
+
+<p>
+People who are experiencing ILI symptoms are more inclined to register
+in Influenzanet. This is especially the case when many new persons
+join during the initial phase of a new influenza epidemic, due to
+media attention. Therefore, the first survey of every participant,
+in which a participant reports symptoms he/she had in the week(s) 
+before joining, is ignored (<i>ignore_first = True</i>).
+The first day a participant is considered active is therefore
+defined as the day following his/her first completed survey.
+</p>
+
+<p>
+A participant is considered active until the day of his/her last completed 
+symptoms questionnaire (<i>always_active = False</i>). 
+Although it is possible that participants who stop reporting do so because 
+they do not have any symptoms, we do not have any information about this.
+</p>
+
+<p>
+Participants are encouraged by a weekly email reminder to complete their
+symptoms' questionnaire every week, whether they have any (ILI) symptoms
+or not. This allows the calculation of a reliable incidence,
+based on the ratio of participants with and without symptoms.
+Participants who do not report regularly are excluded from the analyses,
+defined as participants who have completed less than 3 symptoms' 
+questionnaires (<i>min_surveys = 3</i>), as well as participants who
+report on average less than every 3 weeks (<i>max_freq = 21</i>).
+</p>

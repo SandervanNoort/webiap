@@ -1,0 +1,12 @@
+- run scripts/marker.py
+  = create markers for the maps
+
+- run scripts/questions.py
+  = copy intake.csv and survey.csv
+
+- run scripts/make_web.py
+  = Create all graphics for the website
+
+- run scripts/geo.py 
+  = Create the data files for the map
+    (add once previous seasons 2003-2010

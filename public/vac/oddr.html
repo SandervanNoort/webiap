@@ -1,0 +1,62 @@
+<h1>Voorlopige analyse: compenseren voor overige factoren</h1>
+
+<p>
+De kans of iemand griep heeft, hangt niet alleen af van het wel of niet
+een griepprik halen. Het hangt ook af van andere factoren, zoals de
+leeftijd van de deelnemers. We zien dat hoe ouder de deelnemer is, hoe
+kleiner de kans op griep. We zien echter ook, dat oudere deelnemers vaker
+gevaccineerd zijn. Om te bepalen of oudere deelnemers minder griep
+hebben vanwege hun leeftijd of vanwege de hogere vaccinatie graad, maken
+we gebruik van multivariabele lineaire regressie. Met deze methode, wordt
+voor iedere variabele, de toe of afname van de kans op griep bepaald,
+de zogenaamde odds ratio.
+</p>
+
+<a target="_new" href="http://results.influenzanet.eu/?page=results&season=compare&country=nl&casedef=ilit&cold=cold&type=cutterhist__vaccin_now_later&group=cutter&lang=en">
+<img src="http://results.influenzanet.eu/results/png/nl_2007_vaccin_now_later.png" /></a>
+<a target="_new" href="http://results.influenzanet.eu/?page=results&group=cutter&country=nl&season=compare&casedef=ilit&cold=cold&lang=en&type=cutterili__age_household">
+<img src="http://results.influenzanet.eu/results/png/nl_2007_age_household_21_ilit.png" /></a>
+
+<p>
+Eerst doen we een analyse met slechts een variabele, of een deelnemer
+wel of niet gevaccineerd is. We vinden dan een odds ratio van
+0.94 voor gevaccineerde deelnemers. Dit betekent dat ten opzichte van 
+niet-gevaccineerde deelnemers, gevaccineerde deelnemers 6% minder griep 
+hebben, ofwel een effectiviteit van de griepprik van 6%. 
+</p>
+
+<img src="vac/vac.png" />
+
+<p>
+Wanneer we de analyse doen met zowel de variabele vaccinatie en de
+leeftijd (+ huishouden), dan vinden we odds ratio van 1.1 voor 
+vaccinatie, ofwel gevaccineerden hebben 10% meer kans op griep.
+Volgens dit model verhoogt een griepprik de kans op griep, en
+hogere leeftijd verlaagt de kans op griep. Omdat voornamelijk
+ouderen gevaccineerd zijn, heffen deze effecten elkaar op als
+we alle wel- en niet-gevaccineerde deelnemers met elkaar
+vergelijken.
+</p>
+
+<img src="vac/vac-age.png" />
+
+<p>
+Mensen met een astma of diabetes behoren tot een risico groep en
+worden aangeraden zich te laten vaccineren. 
+Wanneer we de analyse doen met de variabele vaccinatie
+en astma of diabetes, dan zien we inderdaad dat 
+deelnemers met astma of diabetes 70% meer kans op griep hebben.
+In deze analyse vinden we een reductie van 23% in ILI binnen
+de gevaccineerden. Omdat mensen met astma of diabetes een grotere
+kans op griep hebben, maar ook vaker zijn gevaccineerd, heffen deze
+effecten elkaar weer op als we alle wel- en niet-gevaccineerde deelnemers 
+met elkaar vergelijken.
+</p>
+<img src="vac/vac-chronic.png" />
+
+<p>
+Bij een analyse waar zowel de vaccinatie, astma of diabetes als
+de leeftijd (+huishouden) wordt meegenomen, vinden we slechts een
+minimaal effect van 5%.
+</p>
+<img src="vac/vac-age-chronic.png" />
