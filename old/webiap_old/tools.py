@@ -6,7 +6,9 @@
 from __future__ import (division, absolute_import, unicode_literals,
                         print_function)
 
-# tools: *.py, ../*.py
+# tools: *.py, ../bin/*.py
+
+# pylint: disable=C0302
 
 import collections
 import re
@@ -20,7 +22,6 @@ import validate
 import numpy
 import sys
 import io
-import csv
 import multiprocessing
 import signal
 import traceback
@@ -269,68 +270,6 @@ if six.PY2:
         return io.open(*args, **kwargs)
 else:
     csvopen = io.open
-
-
-def touch(fname):
-    """Create an empty file"""
-    create_dir(fname)
-    if os.path.exists(fname):
-        os.utime(fname, None)
-    else:
-        open(fname, "w").close()
-
-
-if six.PY2:
-    class ureader(collections.Iterator):  # pylint: disable=C0103
-        """csv.writer with six.text_type support"""
-
-        def __init__(self, fobj, *args, **kwargs):
-            if isinstance(kwargs.get("delimiter"), six.text_type):
-                kwargs["delimiter"] = str(kwargs["delimiter"])
-            self.reader = csv.reader(fobj, *args, **kwargs)
-
-        def next(self):
-            """Next row"""
-            row = self.reader.next()
-            return [
-                (value if isinstance(value, (float, six.text_type, int)) else
-                 six.text_type(value, "utf8")) for value in row]
-
-        def __next__(self):
-            return self.next()
-
-        @property
-        def line_num(self):
-            """Return current line number"""
-            return self.reader.line_num
-else:
-    ureader = csv.reader
-
-
-if six.PY2:
-    class uwriter(object):  # pylint: disable=C0103
-        """csv.reader with six.text_type support"""
-
-        def __init__(self, fobj, *args, **kwargs):
-            if isinstance(kwargs.get("delimiter"), six.text_type):
-                kwargs["delimiter"] = str(kwargs["delimiter"])
-            self.writer = csv.writer(fobj, *args, **kwargs)
-            # return csv.writer(fobj, *args, **kwargs)
-
-        def writerow(self, row):
-            """Write one row"""
-            # self.writer.writerow(row)
-            self.writer.writerow([
-                item.encode("utf8") if isinstance(item, six.text_type) else
-                item
-                for item in row])
-
-        def writerows(self, rows):
-            """Write multiple rows"""
-            for row in rows:
-                self.writerow(row)
-else:
-    uwriter = csv.writer
 
 
 def cprint(text):

@@ -4,7 +4,7 @@
 # Copyright 2004-2013 Sander van Noort <Sander.van.Noort@gmail.com>
 # Licensed under AGPLv3 (see LICENSE.txt)
 
-"""webiap package"""
+"""webiap_old package"""
 
 from __future__ import (division, absolute_import, unicode_literals,
                         print_function)

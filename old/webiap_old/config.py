@@ -4,7 +4,7 @@
 # Copyright 2004-2013 Sander van Noort <Sander.van.Noort@gmail.com>
 # Licensed under AGPLv3 (see LICENSE.txt)
 
-"""webiap package"""
+"""webiap_old package"""
 
 from __future__ import (division, absolute_import, unicode_literals,
                         print_function)
@@ -15,7 +15,7 @@ import configobj
 from . import tools
 
 
-ROOT = os.path.realpath(os.path.join(os.path.dirname(__file__), ".."))
+ROOT = os.path.realpath(os.path.join(os.path.dirname(__file__), "../.."))
 CONFIG_DIR = os.path.join(ROOT, "config")
 
 CONFIG = None
@@ -33,10 +33,9 @@ def init(mod):
             mod.CONFIG,
             configobj.ConfigObj(os.path.join(CONFIG_DIR, "local.ini")))
     mod.DIRS = {
-        ftype: os.path.join(ROOT, mod.CONFIG["settings"]["web"], dirpath)
+        ftype: os.path.join(ROOT, mod.CONFIG["local"]["web"], dirpath)
         for ftype, dirpath in mod.CONFIG["local"].items()}
-    mod.DIRS["data"] = mod.CONFIG["settings"]["data"]
-    for ftype in ["ini", "png", "pdf", "csv", "data"]:
+    for ftype in ["ini", "png", "pdf", "csv"]:
         tools.create_dir(mod.DIRS[ftype])
     mod.DIAGRAMS = configobj.ConfigObj(
         os.path.join(CONFIG_DIR, "diagrams.ini"),
