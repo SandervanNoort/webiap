@@ -110,6 +110,7 @@ class IliCutterSeason(Figure):
                 casedef_id = {casedef_id}
                 min_participants = {min_participants_subgroups}
                 min_samples = 15
+                min_surveys = {min_surveys}
                 reload = {reload}
                 {samples}
         """
@@ -264,6 +265,7 @@ class IliCutterAll(Figure):
                 casedef = {casedef}
                 casedef_id = {casedef_id}
                 min_participants = {min_participants_subgroups}
+                min_surveys = {min_surveys}
                 reload = {reload}
         """
 
@@ -369,6 +371,7 @@ class IliCutterAllRRR(Figure):
                 casedef = {casedef}
                 casedef_id = {casedef_id}
                 min_participants = {min_participants_subgroups}
+                min_surveys = {min_surveys}
                 reload = {reload}
                 {samples}
         """
@@ -496,6 +499,7 @@ class HistCutterSeason(Figure):
                 cutter = {cutter}
                 city_cutter = {age_distribution}
                 reload = {reload}
+                min_surveys = {min_surveys}
         """
 
     def set_params(self):
@@ -565,6 +569,7 @@ class HistCutterAll(Figure):
                 subset = {subset}
                 season_values = {seasons:co}
                 reload = {reload}
+                min_surveys = {min_surveys}
             """
 
     def set_params(self):

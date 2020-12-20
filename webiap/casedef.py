@@ -758,6 +758,7 @@ class Symptoms(Figure):
         [datasets]
             [[control1]]
                 source_measure = inet_control
+                min_surveys = {min_surveys}
                 country = {country}
                 subset = {subset}
                 season = {season}
