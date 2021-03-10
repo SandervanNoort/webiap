@@ -349,6 +349,7 @@ class Website(object):
                 options["lang"] = "en"
                 options["min_incidence"] = 500
                 options["max_incidence"] = 1500
+                options["map_label"] = "ILI"
                 for options["season"] in times["seasons"]:
                     run(webiap.Maps, options)
 
@@ -360,8 +361,8 @@ class Website(object):
                 options["lang"] = "en"
                 options["min_incidence"] = 1000
                 options["max_incidence"] = 5000
+                options["map_label"] = "<<casedef:corona>>"
                 for options["season"] in times["seasons"]:
-                    print("ja")
                     run(webiap.Maps, options)
 
             if (len(self.parse("week_cutter")) > 0 and

@@ -36,6 +36,7 @@ class Maps(Figure):
             min_pixels = 1000
             min_incidence = {min_incidence}
             max_incidence = {max_incidence}
+            map_label = "{map_label}"
             max_color = 255, 0, 0, 255
             min_color = 255, 220, 220, 255
             none_color = 180, 180, 180, 255
@@ -48,7 +49,7 @@ class Maps(Figure):
                 legend = 16 # 20
                 logo = 15 # 20
             [[legend]]
-                ymin = 70 # 100
+                ymin = 90
                 height = 100 # 150
                 width = 15 # 20
             [[margin]]

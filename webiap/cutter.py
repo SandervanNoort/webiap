@@ -88,7 +88,7 @@ class IliCutterSeason(Figure):
                 xlabel = <<season:{season}>>
                 grid = {grid}
                 wrap = {wrap}
-                ylabel = "ILI / 100,000 {moving_average}"
+                ylabel = "Cases / 100,000 {moving_average}"
                 plot_start = {plot_start}
                 plot_end = {plot_end}
                 {samples}
@@ -247,7 +247,7 @@ class IliCutterAll(Figure):
                 wrap = {wrap}
                 col = {plot_col}
                 row = {plot_row}
-                ylabel = "ILI / 100,000 {moving_average}"
+                ylabel = "Cases / 100,000 {moving_average}"
                 {samples}
         [datasets]
             [[default]]
