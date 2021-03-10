@@ -22,7 +22,7 @@ class Maps(Figure):
         if args["season"] == "all":
             return
 
-        if args["casedef_id"] != "ilit" or args["country"] != "nl":
+        if args["casedef_id"] not in ["ilit", "corona"] or args["country"] != "nl":
             # only maps for nl/be with ilit definition
             return
 
@@ -34,8 +34,8 @@ class Maps(Figure):
         [map]
             mapname = nb2
             min_pixels = 1000
-            min_incidence = 500
-            max_incidence = 1500
+            min_incidence = {min_incidence}
+            max_incidence = {max_incidence}
             max_color = 255, 0, 0, 255
             min_color = 255, 220, 220, 255
             none_color = 180, 180, 180, 255

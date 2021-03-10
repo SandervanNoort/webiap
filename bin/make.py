@@ -347,7 +347,21 @@ class Website(object):
                 options["country"] = "nl"
                 options["casedef_id"] = "ilit"
                 options["lang"] = "en"
+                options["min_incidence"] = 500
+                options["max_incidence"] = 1500
                 for options["season"] in times["seasons"]:
+                    run(webiap.Maps, options)
+
+            if (self.cmd_options.maps and
+                    "nl" in times["countries"] and
+                    "corona" in self.parse("ili")):
+                options["country"] = "nl"
+                options["casedef_id"] = "corona"
+                options["lang"] = "en"
+                options["min_incidence"] = 1000
+                options["max_incidence"] = 5000
+                for options["season"] in times["seasons"]:
+                    print("ja")
                     run(webiap.Maps, options)
 
             if (len(self.parse("week_cutter")) > 0 and
