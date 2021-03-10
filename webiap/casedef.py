@@ -776,7 +776,7 @@ class Symptoms(Figure):
         casedefs = []
         casedef_labels = []
         casedef_ids = []
-        for answer in range(1, 19):
+        for answer in range(1, 25):
             casedefs.append("s100_{0}=1".format(answer))
             casedef_ids.append("s100_{0}".format(answer))
             casedef_labels.append("''")
