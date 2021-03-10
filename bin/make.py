@@ -62,11 +62,13 @@ class Website(object):
         """Parse an argument as a comma seperated list"""
 
         if name == "cold":
-            return ["cold" + ili[3:] for ili in self.parse("ili")]
+            return ["cold" + ili[3:] for ili in self.parse("ili") if ili.startswith("ili")]
         elif name == "allergy":
-            return ["allergy" + ili[3:] for ili in self.parse("ili")]
+            return ["allergy" + ili[3:] for ili in self.parse("ili") if ili.startswith("ili")]
         elif name == "gastro":
-            return ["gastro" + ili[3:] for ili in self.parse("ili")]
+            return ["gastro" + ili[3:] for ili in self.parse("ili") if ili.startswith("ili")]
+        elif name == "":
+            return []
 
         # a list, to not extend DIAGRAMS
         values = tools.SetList(getattr(self.cmd_options, name + "_list"))
@@ -328,6 +330,7 @@ class Website(object):
                             "cold" if venn == "s800_2" else
                             "allergy" if venn == "s800_3" else
                             "gastro" if venn == "s800_4" else
+                            "corona" if venn == "s1120_1" else
                             ""):
                         run(webiap.Casedef,
                             dict(options,
