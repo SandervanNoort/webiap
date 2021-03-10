@@ -326,12 +326,15 @@ class Website(object):
 
                 for venn in self.parse("venn"):
                     for syndrome in self.parse(
-                            "ili" if venn == "s800_1" else
+                            "ili" if venn in ["s800_1", "s1120_1"] else
                             "cold" if venn == "s800_2" else
                             "allergy" if venn == "s800_3" else
                             "gastro" if venn == "s800_4" else
-                            "corona" if venn == "s1120_1" else
                             ""):
+                        if syndrome == "corona" and venn != "s1120_1":
+                            continue
+                        if syndrome != "corona" and venn == "s1120_1":
+                            continue
                         run(webiap.Casedef,
                             dict(options,
                                  casedef_id="{0}@{1}".format(venn, syndrome)))
